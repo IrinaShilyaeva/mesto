@@ -1,0 +1,9 @@
+.popup__info {
+  line-height: 27px;
+  border: none;
+  margin-top: 30px;
+}
+
+.popup__info:first-child {
+  margin-top: 54px;
+}
