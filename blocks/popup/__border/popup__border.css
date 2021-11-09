@@ -1,0 +1,5 @@
+.popup__border {
+  border-bottom: solid 1px black;
+  opacity: 0.2;
+  margin-top: 10px;
+}

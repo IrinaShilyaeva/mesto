@@ -14,11 +14,13 @@ function closePopup() {
 function formSubmitHandler (evt) {
   evt.preventDefault(); 
   
-  let nameInput = formElement.querySelector('.popup__name');
-  let infoInput = formElement.querySelector('.popup__info');
+  let nameInput = document.querySelector('.popup__name');
+  let infoInput = document.querySelector('.popup__info');
+  let userName= document.querySelector('.profile__name');
+  let userText= document.querySelector('.profile__text');
 
-  nameInput.textContent = formElement.querySelector('.popup__name').value;
-  infoInput.textContent = formElement.querySelector('.popup__info').value;
+  userName.textContent = nameInput.value;
+  userText.textContent = infoInput.value;
   popupElement.classList.remove('popup_opened');
 }
 

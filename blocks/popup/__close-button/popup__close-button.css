@@ -1,6 +1,6 @@
 .popup__close-button {
   position: absolute;
-  right: -43px;
+  right: -41px;
   top: -43px;
   cursor: pointer;
   border: none;
@@ -29,8 +29,8 @@
 
 @media (max-width: 720px) {
   .popup__close-button {
-    right: -0px;
-    top: -52px;
+    right: -2px;
+    top: -40px;
   }
   .popup__close-button::after {
     height: 25px;

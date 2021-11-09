@@ -2,14 +2,14 @@
   position: absolute;
   z-index: 50;
   top: 18px;
-  right: -27px;
+  right: -47px;
 }
 
 @media (max-width: 320px) {
   .profile__edit-button {
     width: 18px;
     height: 18px;
-    top: 13px;
-    right: -28px;
+    top: 10px;
+    right: -22px;
   }
 }
