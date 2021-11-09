@@ -10,6 +10,11 @@
   color: white;
   border: none;
   margin-top: 48px;
+  cursor: pointer;
+}
+
+.popup__submit-button:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 720px) {

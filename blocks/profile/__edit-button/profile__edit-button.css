@@ -3,6 +3,11 @@
   z-index: 50;
   top: 18px;
   right: -47px;
+  cursor: pointer;
+}
+
+.profile__edit-button:hover {
+  opacity: 0.6;
 }
 
 @media (max-width: 320px) {
