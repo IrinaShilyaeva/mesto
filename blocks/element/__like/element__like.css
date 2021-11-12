@@ -1,5 +1,12 @@
 .element__like {
+  background-image: url(../../../image/лайк.svg);
+  background-color: white;
+  border: none;
   width: 22px;
   height: 19px;
   cursor: pointer;
+}
+
+.element__like:hover {
+  opacity: 0.5;
 }

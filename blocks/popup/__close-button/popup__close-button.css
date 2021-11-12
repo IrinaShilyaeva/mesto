@@ -25,7 +25,7 @@
   border: 2px solid white;
   top: 0;
   transform: rotate(-45deg);
-}
+} 
 
 .popup__close-button:hover {
   opacity: 0.6;

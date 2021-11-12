@@ -10,6 +10,7 @@
   color: white;
   border: none;
   margin-top: 48px;
+  margin-bottom: 37px;
   cursor: pointer;
 }
 
@@ -21,5 +22,7 @@
   .popup__submit-button {
     font-size: 14px;
     line-height: 17px;
+    margin-top: 58px;
+    margin-bottom: 25px;
   }
 }

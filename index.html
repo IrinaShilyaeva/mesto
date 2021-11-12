@@ -6,13 +6,13 @@
   <meta name="author" content="Shilyaeva Irina">
   <link rel="stylesheet" href="./style/index.css">
   <link rel="shortcut icon" href="#">
-  <title>Mesto</title>
+  <title>Место</title>
 </head>
 <body class="page">
   <div class="page__wrapper">
 
     <header class="header">
-      <img src="./image/Vector.png" class="header__image" alt="Место">
+      <img src="./image/logo.svg" class="header__image" alt="Место">
     </header>
 
     <main class="content">
@@ -25,10 +25,10 @@
               <h1 class="profile__name">Жак-Ив Кусто</h1>
               <p class="profile__text">Исследователь океана</p>
             </div>
-            <img src="./image/Edit_Button.svg" alt="Редактирование" class="profile__edit-button">
+            <button class="profile__edit-button" type="button"></button>
           </div>
       </div>  
-      <div class="profile__add-button"></div>
+      <button class="profile__add-button" type="button"></button>
     </section>
 
     <section class="elements">
@@ -37,42 +37,42 @@
           <img src="./image/pexels-eberhard-grossgasteiger-1699025.jpg" class="element__image" alt="Гора Эльбрус">
           <div class="element__page">
             <h2 class="element__name">Гора Эльбрус</h2>
-            <img src="./image/лайк.svg" alt="Лайк" class="element__like element__like_active">
+            <button class="element__like" type="button"></button>
           </div>
         </li>
         <li class="element">
           <img src="./image/pexels-julie-aagaard-1374064.jpg" class="element__image" alt="Карачаевск">
           <div class="element__page">
             <h2 class="element__name">Карачаевск</h2>
-            <img src="./image/лайк.svg" alt="Лайк" class="element__like element__like_active">
+            <button class="element__like" type="button"></button>
           </div>
         </li>
         <li class="element">
           <img src="./image/pexels-philip-ackermann-1666012.jpg" class="element__image" alt="Домбай">
           <div class="element__page">
             <h2 class="element__name">Домбай</h2>
-            <img src="./image/лайк.svg" alt="Лайк" class="element__like element__like_active">
+            <button class="element__like" type="button"></button>
           </div>
         </li>
         <li class="element">
           <img src="./image/pexels-philip-ackermann-1666021.jpg" class="element__image" alt="Алтай">
           <div class="element__page">
             <h2 class="element__name">Алтай</h2>
-            <img src="./image/лайк.svg" alt="Лайк" class="element__like element__like_active">
+            <button class="element__like" type="button"></button>
           </div>
         </li>
         <li class="element">
           <img src="./image/visualsofdana-xQk_XFyGpos-unsplash.jpg" class="element__image" alt="Бали">
           <div class="element__page">
             <h2 class="element__name">Бали</h2>
-            <img src="./image/лайк.svg" alt="Лайк" class="element__like element__like_active">
+            <button class="element__like" type="button"></button>
           </div>
         </li>
         <li class="element">
           <img src="./image/pexels-vishal-amin-910307.jpg" class="element__image" alt="Канада">
           <div class="element__page">
             <h2 class="element__name">Канада</h2>
-            <img src="./image/лайк.svg" alt="Лайк" class="element__like element__like_active">
+            <button class="element__like" type="button"></button>
           </div>
         </li>
       </ul>
@@ -80,13 +80,11 @@
 
     <section class="popup">
       <div class="popup__container">
-        <button class="popup__close-button"></button>
-        <h1 class="popup__title">Редактировать профиль</h1>
-        <form class="popup__form">
-          <input type="text" class="popup__name" value="Имя пользователя">
-          <div class="popup__border"></div>
-          <input type="text" class="popup__info" value="Информация о пользователе">
-          <div class="popup__border"></div>
+        <button class="popup__close-button" type="button"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__form" name="userform">
+          <input type="text" class="popup__input popup__input_user_name" value="Имя пользователя" name="username">
+          <input type="text" class="popup__input popup__input_user_info" value="Информация о пользователе" name="userinfo">
           <button class="popup__submit-button" type="submit" value="Сохранить">Сохранить</button>
         </form>
       </div>
@@ -95,7 +93,7 @@
     </main>
 
     <footer class="footer">
-      <h3 class="footer__logo">© 2020 Mesto Russia</h3>
+      <p class="footer__logo">© 2020 Mesto Russia</p>
     </footer>
   </div>
   <script src="./script/index.js"></script>
