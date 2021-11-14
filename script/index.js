@@ -8,6 +8,8 @@ let userName= document.querySelector('.profile__name');
 let userText= document.querySelector('.profile__text');
 
 function openPopup() {
+  nameInput.value = userName.innerText;
+  infoInput.value = userText.innerText;
   popupElement.classList.add('popup_opened');
 }
 
