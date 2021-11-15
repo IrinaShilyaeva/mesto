@@ -1,5 +1,5 @@
 .profile__text {
-  font-family: Inter;
+  font-family: 'Inter', Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -7,6 +7,9 @@
   color: white;
   margin-top: 11px;
   margin-bottom: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (max-width: 720px) {
