@@ -15,11 +15,11 @@
 
 @media (max-width: 720px) {
   .popup__input {
-    margin-top: 34px;
+    margin-top: 32px;
     line-height: 24px;
   }
   .popup__input:first-child {
     margin-top: 65px;
-    line-height: 28px;
+    line-height: 30px;
   }
 }
