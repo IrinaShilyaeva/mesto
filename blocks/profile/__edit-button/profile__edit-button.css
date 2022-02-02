@@ -20,7 +20,9 @@
     z-index: 50;
     width: 18px;
     height: 18px;
-    top: 19px;
+    top: 35px;
     right: -29px;
+    margin: 0;
+    background-image: url(../../../image/Edit_Button1.svg);
   }
 }
