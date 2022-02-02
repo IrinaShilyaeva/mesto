@@ -1,6 +1,6 @@
 
 const popup = document.querySelector('.popup');
-const popupElement = document.querySelector('.popup__profile');                           //переменные попапа "Пользователь"
+const popupElement = document.querySelector('.popup_profile');                           //переменные попапа "Пользователь"
 const closeButton = document.querySelector('.popup__close-button');
 
 const editButton = document.querySelector('.profile__edit-button');
@@ -12,7 +12,7 @@ const userText= document.querySelector('.profile__text');
 const formElement = popupElement.querySelector('.popup__form');
 
                                                                                   //переменные попапа "добавления карточек"
-  const cardPopupElement = document.querySelector('.popup__card');
+  const cardPopupElement = document.querySelector('.popup_card');
   const addButton = document.querySelector('.profile__add-button');
   const closeCardButton = document.querySelector('.popup__close-card');
   const imageCard = document.querySelector('.element__image');
@@ -77,7 +77,7 @@ const formElement = popupElement.querySelector('.popup__form');
   }
 
   const openCard = document.querySelector('.popup__opencard');
-  const imagePopup = document.querySelector('.popup__image');
+  const imagePopup = document.querySelector('.popup_image');
   const bigImage = document.querySelector('.popup__big-image');
   const nameBigImage = openCard.querySelector('.popup__image-name');
 
