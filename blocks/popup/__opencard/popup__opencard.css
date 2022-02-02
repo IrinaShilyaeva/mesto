@@ -1,0 +1,7 @@
+.popup__opencard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  max-width: 80%;
+}

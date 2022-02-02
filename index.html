@@ -33,52 +33,11 @@
 
     <section class="elements">
       <ul class="elements__list">
-        <li class="element">
-          <img src="./image/pexels-eberhard-grossgasteiger-1699025.jpg" class="element__image" alt="Гора Эльбрус">
-          <div class="element__page">
-            <h2 class="element__name">Гора Эльбрус</h2>
-            <button class="element__like" type="button" aria-label="like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./image/pexels-julie-aagaard-1374064.jpg" class="element__image" alt="Карачаевск">
-          <div class="element__page">
-            <h2 class="element__name">Карачаевск</h2>
-            <button class="element__like" type="button" aria-label="like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./image/pexels-philip-ackermann-1666012.jpg" class="element__image" alt="Домбай">
-          <div class="element__page">
-            <h2 class="element__name">Домбай</h2>
-            <button class="element__like" type="button" aria-label="like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./image/pexels-philip-ackermann-1666021.jpg" class="element__image" alt="Алтай">
-          <div class="element__page">
-            <h2 class="element__name">Алтай</h2>
-            <button class="element__like" type="button" aria-label="like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./image/visualsofdana-xQk_XFyGpos-unsplash.jpg" class="element__image" alt="Бали">
-          <div class="element__page">
-            <h2 class="element__name">Бали</h2>
-            <button class="element__like" type="button" aria-label="like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./image/pexels-vishal-amin-910307.jpg" class="element__image" alt="Канада">
-          <div class="element__page">
-            <h2 class="element__name">Канада</h2>
-            <button class="element__like" type="button" aria-label="like"></button>
-          </div>
-        </li>
+      
       </ul>
     </section>
 
-    <section class="popup">
+    <section class="popup popup__profile">
       <div class="popup__container">
         <button class="popup__close-button" type="button" aria-label="close"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
@@ -90,12 +49,43 @@
       </div>
     </section>
 
+    <section class="popup popup__card">
+      <div class="popup__container">
+        <button class="popup__close-button popup__close-card" type="button" aria-label="close"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form" name="cardform">
+          <input type="text" class="popup__input popup__input_card_name" value="Название" name="cardname">
+          <input type="text" class="popup__input popup__input_card_link" value="Ссылка на картинку" name="cardlink">
+          <button class="popup__submit-button" type="submit" value="Сохранить">Сохранить</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="popup popup__image">
+      <div class="popup__opencard">
+        <button class="popup__close-button" type="button" aria-label="close"></button>
+        <img src=" " alt=" " class="popup__big-image">
+        <h3 class="popup__image-name"></h3>  
+      </div>
+    </section>
+
     </main>
 
     <footer class="footer">
       <p class="footer__logo">© 2020 Mesto Russia</p>
     </footer>
   </div>
-  <script src="./script/index.js"></script>
+  
+  <template id="elements-template">
+    <li class="element">
+      <img src=" " class="element__image" alt=" ">
+      <button class="element__delete" type="button" aria-label="delete"></button>
+      <div class="element__page">
+        <h2 class="element__name"></h2>
+        <button class="element__like" type="button" aria-label="like"></button>
+      </div>
+    </li>
+  </template>
+  <script src="./script/index.js"></script> 
 </body>
 </html>
