@@ -26,7 +26,7 @@ const initialCards = [
 ];
 //переменне "попап"
 const popupList = document.querySelectorAll(".popup");
-const popupElement = document.querySelector(".popup_type_profile"); 
+const popupElement = document.querySelector(".popup_type_profile");
 const cardPopupElement = document.querySelector(".popup_type_card");
 const imagePopup = document.querySelector(".popup_type_image");
 // переменне "кнопки"
@@ -41,7 +41,7 @@ const cardLinkInput = document.querySelector(".popup__input_card_link");
 const userName = document.querySelector(".profile__name");
 const userText = document.querySelector(".profile__text");
 
-const formElement = popupElement.querySelector(".popup__form");
+const form = document.querySelector(".popup__form");
 const cardForm = document.querySelector('[name="cardform"]');
 
 const imageCard = document.querySelector(".element__image");
@@ -124,10 +124,7 @@ popupList.forEach((popup) => {
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
-}
-
-function closePopup(popup) {
-  popup.classList.remove("popup_opened");
+  document.addEventListener("keydown", closePopupEsc);
 }
 
 function openProfilePopup() {
@@ -145,6 +142,18 @@ function openImagePopup() {
   openPopup(imagePopup);
 }
 
+function closePopup(popup) {
+  popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closePopupEsc);
+}
+
+function closePopupEsc(evt) {
+  if (evt.key === "Escape") {
+    const mainPopup = document.querySelector(".popup_opened");
+    closePopup(mainPopup);
+  }
+}
+
 function handleFormSubmit(e) {
   e.preventDefault();
 
@@ -156,5 +165,5 @@ function handleFormSubmit(e) {
 
 profileEditButton.addEventListener("click", openProfilePopup); // слушатель открытия попапа редактирования пользователя
 cardAddButton.addEventListener("click", openCardPopup); // слушатель открытия попапа добавления карточки.
-formElement.addEventListener("submit", handleFormSubmit); // слушатель сохранения формы редактирования профиля
+form.addEventListener("submit", handleFormSubmit); // слушатель сохранения формы редактирования профиля
 cardForm.addEventListener("submit", handleCardsFormSubmit); // слушатель сохранения новой карточки
