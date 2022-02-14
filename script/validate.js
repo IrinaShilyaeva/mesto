@@ -47,16 +47,6 @@ const isValid = (formElement, element, config) => {
   }
 };
 
-const enableValidation = (config) => {
-  const formList = Array.from(document.querySelectorAll(config.formSelector));
-  formList.forEach((formElement) => {
-    formElement.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-    });
-    setEventListeners(formElement, config);
-  });
-};
-
 function setSubmitButton(formElement, config) {
   const button = formElement.querySelector(config.submitButtonSelector);
   button.disabled = !formElement.checkValidity();
@@ -64,6 +54,13 @@ function setSubmitButton(formElement, config) {
     config.inactiveButtonClass,
     !formElement.checkValidity()
   );
+};
+
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
+  formList.forEach((formElement) => {
+    setEventListeners(formElement, config);
+  });
 };
 
 enableValidation(validateSelectors);

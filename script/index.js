@@ -1,29 +1,3 @@
-const initialCards = [
-  {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-  },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-  },
-];
 //переменне "попап"
 const popupList = document.querySelectorAll(".popup");
 const popupElement = document.querySelector(".popup_type_profile");
@@ -44,32 +18,30 @@ const userText = document.querySelector(".profile__text");
 const form = document.querySelector(".popup__form");
 const cardForm = document.querySelector('[name="cardform"]');
 
-const imageCard = document.querySelector(".element__image");
-const nameCard = document.querySelector(".element__name");
 const elementsList = document.querySelector(".elements__list");
 const elementTemplate = document
   .querySelector("#elements-template")
   .content.querySelector(".element");
 
 const openCard = document.querySelector(".popup__opencard");
-
 const bigImage = document.querySelector(".popup__big-image");
 const nameBigImage = openCard.querySelector(".popup__image-name");
+
 
 const renderElement = (item) => {
   const element = elementTemplate.cloneNode(true);
   const cardLikeButton = element.querySelector(".element__like");
   const cardDeleteButton = element.querySelector(".element__delete");
+  const imageCard = element.querySelector(".element__image");
+  const nameCard = element.querySelector(".element__name");
 
-  element.querySelector(".element__name").textContent = item.name;
-  element.querySelector(".element__image").src = item.link;
-  element.querySelector(".element__image").alt = item.name;
+  nameCard.textContent = item.name;
+  imageCard.src = item.link;
+  imageCard.alt = item.name;
 
   cardLikeButton.addEventListener("click", handleLikeButton);
   cardDeleteButton.addEventListener("click", handleDeleteButton);
-  element
-    .querySelector(".element__image")
-    .addEventListener("click", handleOpenCard);
+  imageCard.addEventListener("click", handleOpenCard);
 
   return element;
 };
@@ -88,9 +60,9 @@ const handleDeleteButton = (e) => {
 
 const handleOpenCard = (e) => {
   const img = e.target.src;
-
+  bigImage.alt = e.target.alt;  
   bigImage.src = img;
-  nameBigImage.textContent = e.target.alt;
+  nameBigImage.textContent = e.target.alt;  
 
   openPopup(imagePopup);
 };
@@ -98,12 +70,13 @@ const handleOpenCard = (e) => {
 const handleCardsFormSubmit = (e) => {
   e.preventDefault();
   const list = {
-    name: cardNameInput.placeholder,
-    link: cardLinkInput.placeholder,
+    name: cardNameInput.value,
+    link: cardLinkInput.value,
   };
   const newCard = renderElement(list);
   addCard(newCard);
   closePopup(cardPopupElement);
+  form.reset();
 };
 
 initialCards.forEach((item) => {
@@ -125,12 +98,13 @@ popupList.forEach((popup) => {
 function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupEsc);
+  enableValidation(validateSelectors);
+  isValid();
 }
 
 function openProfilePopup() {
   nameInput.value = userName.innerText;
   infoInput.value = userText.innerText;
-
   openPopup(popupElement);
 }
 
