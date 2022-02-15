@@ -76,7 +76,7 @@ const handleCardsFormSubmit = (e) => {
   const newCard = renderElement(list);
   addCard(newCard);
   closePopup(cardPopupElement);
-  form.reset();
+  cardForm.reset();
 };
 
 initialCards.forEach((item) => {
