@@ -15,7 +15,8 @@ const cardLinkInput = document.querySelector(".popup__input_card_link");
 const userName = document.querySelector(".profile__name");
 const userText = document.querySelector(".profile__text");
 
-const form = document.querySelector(".popup__form");
+const form = document.querySelector("popup__form");
+const userForm = document.querySelector('[name="userform"]');
 const cardForm = document.querySelector('[name="cardform"]');
 
 const elementsList = document.querySelector(".elements__list");
@@ -77,6 +78,7 @@ const handleCardsFormSubmit = (e) => {
   addCard(newCard);
   closePopup(cardPopupElement);
   cardForm.reset();
+  setSubmitButton(cardForm, validateSelectors);
 };
 
 initialCards.forEach((item) => {
@@ -98,14 +100,13 @@ popupList.forEach((popup) => {
 function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupEsc);
-  enableValidation(validateSelectors);
-  isValid();
 }
 
 function openProfilePopup() {
   nameInput.value = userName.innerText;
   infoInput.value = userText.innerText;
   openPopup(popupElement);
+  setSubmitButton(userForm, validateSelectors);
 }
 
 function openCardPopup() {
@@ -139,5 +140,5 @@ function handleFormSubmit(e) {
 
 profileEditButton.addEventListener("click", openProfilePopup); // слушатель открытия попапа редактирования пользователя
 cardAddButton.addEventListener("click", openCardPopup); // слушатель открытия попапа добавления карточки.
-form.addEventListener("submit", handleFormSubmit); // слушатель сохранения формы редактирования профиля
+userForm.addEventListener("submit", handleFormSubmit); // слушатель сохранения формы редактирования профиля
 cardForm.addEventListener("submit", handleCardsFormSubmit); // слушатель сохранения новой карточки

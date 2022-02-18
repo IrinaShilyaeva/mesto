@@ -5,7 +5,7 @@ const validateSelectors = {
   inactiveButtonClass: "popup__button_disabled",
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__input-error_active",
-};
+}
 
 const showInputError = (formElement, element, errorMessage, config) => {
   element.classList.add(config.inputErrorClass);
